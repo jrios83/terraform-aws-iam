@@ -3,7 +3,7 @@ provider "aws" {
   profile   = "terracoder"
 }
 
-# create an iam user
+# create iam user, change the name for your username
 resource "aws_iam_user" "iam_user" {
   name = "developer1"
 }
@@ -13,7 +13,7 @@ resource "aws_iam_access_key" "iam_access_key" {
   user = aws_iam_user.iam_user.name
 }
 
-# create the inline policy
+# create the inline policy, I used the policy editor of the aws console
 data "aws_iam_policy_document" "s3_get_put_detele_policy_document" {
   statement {
     actions = [
@@ -33,5 +33,5 @@ data "aws_iam_policy_document" "s3_get_put_detele_policy_document" {
 resource "aws_iam_user_policy" "s3_get_put_detele_policy" {
   name    = "s3_get_put_detele_policy"
   user    = aws_iam_user.iam_user.name
-  policy  = data.aws_iam_policy_document.s3_get_put_detele_policy_document.json
+  policy  = data.aws_iam_policy_document.s3_get_put_detele_policy_document.json 
 }
