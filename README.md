@@ -40,7 +40,7 @@ Español
 Cree un perfil de usuario de IAM con aws cli con el siguiente comando:
 
 ```hcl
-- aws configure --profile <nombre>
+aws configure --profile <nombre>
 ```
 
 Previamente debes crear el usuario con acceso programático para poder conectar tu terraform con tu
@@ -52,6 +52,14 @@ resources and actions.
 
 Finalmente, solo debes ejecutar los siguientes comandos:
 
-- terraform init
-- terraform plan
-- terraform apply
+```hcl
+terraform init
+```
+
+```hcl
+terraform plan
+```
+
+```hcl
+terraform apply
+```
